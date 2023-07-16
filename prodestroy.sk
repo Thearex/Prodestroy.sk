@@ -1,0 +1,172 @@
+# Skriptin on tehnyt Thearex12
+# Copyright Thearex12 2022
+# megamaa.com/dc
+
+command /prodestroy:
+	permission: OP
+	permission message: [&e&lPRO&a&lDestroy&f] Tarvitset oikeuden &lOP! MADE BY Thearex12
+	trigger:
+		send "" to player
+		send "&e&lPRO&a&lDestroy &6&l0.5 &b&lBy Thearex12" to player
+		send "" to player
+		send "&2&lKomennot:" to player
+		send "&1&l/&fprodestroyfakedestroyserver&f &1&l/&fprodestroyfakejoin (text)" to player
+		send "&b&l/&fprodestroyfakeleave (text) &b&l/&fprodestroygivenuke" to player
+		send "&6&l/&fprodestroygivenuke &6&l/&fprodestroynickname (rank) (text)" to player
+		send "" to player
+        
+        
+command /prodestroyfakedestroyserver:
+	permission: op
+	permission message: [&e&lPRO&a&lDestroy&f] Tarvitset oikeuden &lOP! MADE BY Thearex12
+	trigger:
+		wait 3 second
+		broadcast "&c%player% activates the destruction of the server"
+		wait 0.5 second
+		broadcast "[Server] Skript made by &lThearex12!"
+		wait 1 second
+		broadcast "[Server] &a&l3"
+		wait 1 second
+		broadcast "[Server] &a&l2"
+		wait 1 second
+		broadcast "[Server] &a&l1"
+		wait 1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.1 second
+		broadcast "&4&lERROR!"
+		wait 0.5 second
+		broadcast "&a&lLoading Completed!"
+		wait 5 second
+		broadcast "[Server] Are you sure you want to destroy the server? Nothing = Yes"
+		wait 5 second
+		broadcast "[Server] &4The server will be destroyed after five seconds"
+		wait 5 second
+		broadcast "[Server] The server is being destroyed..."
+		wait 0.1 second
+		broadcast "[Server] Thanks for playing!"
+		wait 1 second
+		wait 1 second
+		make console execute command "restart"
+        
+command /prodestroyfakejoin [<text>]:
+	permission message: [&e&lPRO&a&lDestroy&f] Tarvitset oikeuden &lOP! MADE BY Thearex12
+	permission: op
+	trigger:
+		arg is set:
+		broadcast "&e%colored arg-1% joined the server"
+
+command /prodestroyfakeleave [<text>]:
+	permission message: [&e&lPRO&a&lDestroy&f] Tarvitset oikeuden &lOP! MADE BY Thearex12
+	permission: op
+	trigger:
+		arg is set:
+		broadcast "&e%colored arg-1% left the server"
+        
+command /prodestroygivenuke:
+	permission: OP
+	permission message: [&e&lPRO&a&lDestroy&f] Tarvitset oikeuden &lOP! MADE BY Thearex12
+	trigger:
+		give 1 tnt named "&aNUKE&e&lVARO" to player
+
+
+on place tnt:
+    if name of player's tool is "&aNUKE&e&lVARO":
+        wait 1 second
+        broadcast "[Server] %player% Räjäyttin nuken!"
+        create an explosion of force 120 at location of block
+        
+command /prodestroynickname [<text>] [<text>]:
+	aliases: /pronick
+	permission: op
+	permission message: [&e&lPRO&a&lDestroy&f] Tarvitset oikeuden &lOP! MADE BY Thearex12
+	trigger:
+		set player's displayname to "&7[&f%colored arg-1%&7] %colored arg-2%"
+		send "[&e&lPRO&a&lDestroy&f] Your username and role is &7[&f%colored arg-1%&7] %colored arg-2%."
+
+
