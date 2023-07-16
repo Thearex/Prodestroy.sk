@@ -1,2 +1,4 @@
 # Prodestroy.sk
-This is pro skript :D
+Tämä skripti on tehty joskus 2022 eli aika vanha :D
+
+jos haluat parannella tätä nii laita pull reguesteihin :)
